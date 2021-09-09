@@ -1,0 +1,253 @@
+* {box-sizing: border-box;}
+
+body {
+    font-family: 'Athiti', serif;
+}
+.topnav {
+    overflow: hidden;
+    background-color: #D3D3D3;
+}
+.topnav a {
+    float: left;
+    color: #6495ED;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+.topnav a:hover {
+    background-color: #C0C0C0;
+    color: #6495ED;
+}
+.topnav a.active {
+    background-color: #6495ED;
+    color: #D3D3D3;
+}
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+.button {
+    background-color: #D3D3D3;
+    border: none;
+    color: #6495ED;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 25%;
+    font-family: 'Athiti', serif;
+}
+.button:hover {
+    background-color: #6495ED;
+    color: #D3D3D3;
+}
+.button2 {
+    background-color: white;
+    border: 2px solid white;
+    color: #6495ED;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 25%;
+    font-family: 'Athiti', serif;
+    border-radius: 4px;
+}
+.button2:hover {
+    background-color: #6495ED;
+    color: white;
+}
+.button3 {
+    background-color: #D3D3D3;
+    border: none;
+    color: #6495ED;
+    text-align: center;
+    padding: 13px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: 'Athiti', serif;
+}
+.button3:hover {
+    background-color: #6495ED;
+    color: #D3D3D3;
+}
+.container {
+    padding: 16px;
+}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: none; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 400px;
+    top: 70px;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}  
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+}
+div.a {
+    font-size: 150%;
+}
+.topright {
+    position: absolute;
+    top: 45px;
+    right: 16px;
+    font-size: 18px;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #D3D3D3;
+}
+li {
+    float: right;
+}
+li a {
+    display: block;
+    color: #6495ED;
+    padding: 8px 16px;
+    text-decoration: none;
+    text-align: center;
+}
+li a:hover {
+    background-color: #6495ED;
+    color: white;
+}
+.rightcolumn {   
+    float: right;
+    width: 70%;
+}
+.leftcolumn {
+    float: right;
+    width: 30%;
+    background-color: inherit;
+    padding-right: 20px;
+}
+.leftcolumn2 {   
+    float: left;
+    width: 75%;
+    padding-left: 20px;
+}
+.rightcolumn2 {
+    float: left;
+    width: 25%;
+    background-color: inherit;
+    padding-left: 20px;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.card {
+    background-color: #D3D3D3;
+    padding: 20px;
+    margin-top: 20px;
+}
+#rcorners1 {
+    border-radius: 5px;
+    background: #D3D3D3;
+}
+#rcorners2 {
+    border-radius: 5px;
+}
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+.container {
+  padding: 16px;
+}
+.column {
+    margin-right: 150px;
+    margin-left: 450px;
+    width: 50%;
+}
+.column2 {
+    float: left;
+    width: 50%;
+    padding-right: 10px;
+}
+a:link {
+    color: #6495ED;
+    text-decoration: none;
+    font-size: 16px
+}
+a:visited {
+    color: #6495ED;
+    text-decoration: none;
+    font-size: 16px
+}
+a:hover {
+    color: white;
+    text-decoration: none;
+    font-size: 16px
+}
+a:active {
+    color: white;
+    text-decoration: none;
+    font-size: 16px
+}
+.imgcontainer {
+    text-align: center;
+    margin: 20px 0 12px 0;
+}
+img.avatar {
+    width: 20%;
+}
