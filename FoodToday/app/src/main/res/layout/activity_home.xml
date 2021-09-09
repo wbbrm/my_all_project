@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="com.example.foodtoday.Home">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20pt"
+        android:accessibilityHeading="false"
+        android:fontFamily="@font/itim"
+        android:text="วันนี้จะกินอะไรดีนะ"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark"
+        android:textSize="36sp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="512px"
+        android:layout_height="512px"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20pt"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/eat__2_" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="500px"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/chicken"
+        android:drawablePadding="5pt"
+        android:fontFamily="@font/itim"
+        android:text="อาหารคาว"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark"
+        android:textColorHighlight="@android:color/background_dark"
+        android:textColorLink="@android:color/background_light"
+        android:textSize="24sp"
+        android:backgroundTint="#8BC34A" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="500px"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/gummy_bear"
+        android:drawablePadding="5pt"
+        android:fontFamily="@font/itim"
+        android:text="ของหวาน"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark"
+        android:textColorHighlight="@android:color/background_dark"
+        android:textColorLink="@android:color/background_light"
+        android:textSize="24sp"
+        android:backgroundTint="#8BC34A" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="500px"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/milk__1_"
+        android:drawablePadding="5pt"
+        android:fontFamily="@font/itim"
+        android:text="เครื่องดื่ม"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark"
+        android:textColorHighlight="@android:color/background_dark"
+        android:textColorLink="@android:color/background_light"
+        android:textSize="24sp"
+        android:backgroundTint="#8BC34A" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="500px"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/catering"
+        android:drawablePadding="5pt"
+        android:fontFamily="@font/itim"
+        android:text="ร้านอาหาร"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark"
+        android:textColorHighlight="@android:color/background_dark"
+        android:textColorLink="@android:color/background_light"
+        android:textSize="24sp"
+        android:backgroundTint="#8BC34A" />
+
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="500px"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/beer"
+        android:drawablePadding="5pt"
+        android:fontFamily="@font/itim"
+        android:text="เกมปาร์ตี้"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark"
+        android:textColorHighlight="@android:color/background_dark"
+        android:textColorLink="@android:color/background_light"
+        android:textSize="24sp"
+        android:backgroundTint="#8BC34A" />
+
+</LinearLayout>
