@@ -1,9 +1,10 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="th">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CARRENT AAA | ติดต่อเรา</title>
+    <title>CARRENT AAA | หน้าหลัก</title>
     <link rel="shortcut icon" href="img/road-sign.ico.png"/>
     <link href="https://fonts.googleapis.com/css?family=Athiti&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
@@ -20,22 +21,18 @@
                     document.getElementById("time").innerHTML = t.toLocaleTimeString();
                 }
             </script>
-            <br>
-            <a href="admin.php">เข้าสู่ระบบ</a>
         </div>
     </head>
     <body>
-        <div class="topnav"><b>
-            <a href="home.php">หน้าหลัก</a>
-            <a href="rental.php">เช่ารถ</a>
-            <a href="how_to.php">วิธีการเช่า</a>
-            <a href="contact.php">ติดต่อเรา</a>
-        </b></div>
-        <h2>ชำระเงิน</h2>
-        <div class="card">
-        <div class="a" align=center>โอนเงินผ่านบัญชี<br>บัญชีธนาคาร : 111-0-11100-1<br>ชื่อบัญชี : นายจตุรงศ์ ยุวดำรงชัย<br>ธนาคาร : กสิกรไทย<br><br>
-        <a href="rental.php" class="button"><b>ยืนยันการชำระเงิน</b></a>
-        <a href="confirm_car.php" class="button"><b>กลับ</b></a>
-        </div></div>
-        </body>
-        </html>
+        <ul><b>
+            <li><a href="logout.php">ออกจากระบบ</a></li>
+            <li><?php echo $_SESSION['user']; ?></li>
+        </b></ul>
+        <h2>เมนู</h2>
+        <p><a href="#" class="button">สัญญาการเช่ารถ</a>
+        <a href="detail_car.php" class="button">ข้อมูลรถ</a></p>
+        <p><a href="#" class="button">ข้อมูลลูกค้า</a>
+        <a href="detail_emp.php" class="button">ข้อมูลพนักงาน</a></p>
+        <p><a href="#" class="button">รายงานต่างๆ</a></p>
+    </body>
+</html>

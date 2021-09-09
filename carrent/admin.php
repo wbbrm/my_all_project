@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <head>
-        <p>&nbsp</p>
+        <h1><img src="img/road-sign.ico.png" width="50"> CARRENT AAA</h1>
         <div class="topright"><b id="date"></b> | <b id="time"></b>
             <script>
                 var d = new Date();
@@ -28,7 +28,7 @@
             <li><a href="logout.php">ออกจากระบบ</a></li>
             <li><?php echo $_SESSION['user']; ?></li>
         </b></ul>
-        <h1>เมนู</h1>
+        <h2>เมนู</h2>
         <div align="center"><b>
             <p><a href="#" class="button">สัญญาการเช่ารถ</a>
             <a href="detail_car.php" class="button">ข้อมูลรถ</a></p>

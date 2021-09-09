@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 24, 2020 at 02:37 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.1
+-- Generation Time: Mar 04, 2020 at 11:47 PM
+-- Server version: 10.4.10-MariaDB
+-- PHP Version: 7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -31,45 +31,65 @@ USE `carrentaaa`;
 --
 
 CREATE TABLE `car` (
-  `id` int(3) NOT NULL,
+  `id` int(11) NOT NULL,
   `Bodynumber` varchar(17) NOT NULL COMMENT 'เลขตัวถัง',
-  `Brand` char(10) NOT NULL COMMENT 'ยี่ห้อ',
+  `Brand` char(12) NOT NULL COMMENT 'ยี่ห้อ',
   `Generation` varchar(20) NOT NULL COMMENT 'รุ่น',
   `License_plate` varchar(8) NOT NULL COMMENT 'ทะเบียนรถ',
+  `Car_type` char(40) NOT NULL COMMENT 'ประเภทรถ',
   `Price` int(5) NOT NULL COMMENT 'ราคา',
   `Geartype` char(20) NOT NULL COMMENT 'เกียร์',
   `Color` char(20) NOT NULL COMMENT 'สี',
   `Passenger` int(2) NOT NULL COMMENT 'ผู้โดยสาร',
   `Detail` varchar(300) NOT NULL COMMENT 'รายละเอียด',
-  `Picture` varchar(255) NOT NULL COMMENT 'รูปภาพ',
-  `Car_Type` char(40) NOT NULL COMMENT 'ประเภทรถ'
+  `Picture` varchar(255) NOT NULL COMMENT 'รูปภาพ'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `car`
 --
 
-INSERT INTO `car` (`id`, `Bodynumber`, `Brand`, `Generation`, `License_plate`, `Price`, `Geartype`, `Color`, `Passenger`, `Detail`, `Picture`, `Car_Type`) VALUES
-(1, 'MNBAXXMAWAFJ98812', 'Toyota', 'Vios 2015', 'กย-1457', 200, 'AUTO', 'น้ำตาล', 5, 'FM/AM Radio USB/AUX CD/MP3', '20200223_104033.jpg', 'รถเก๋ง'),
-(2, 'MRHCR2640DP106543', 'Nissan', 'Note 2017', 'กข-8514', 300, 'AUTO', 'แดง', 4, 'FM/AM Radio USB/AUX Bluetooth', '20200223_103941.jpg', 'Eco Car'),
-(3, 'MSKI487COINM52369', 'Honda', 'City 2015', 'ขน-5698', 300, 'AUTO', 'ขาว', 5, 'FM/AM Radio USB/AUX CD/MP3', '20200223_103418.png', 'รถเก๋ง'),
-(4, 'KMDSS587CD478EEOI', 'Toyota', 'Vios 2018', 'กก-2541', 300, 'AUTO', 'ขาว', 5, 'FM/AM Radio USB/AUX ', '20200223_103556.png', 'รถเก๋ง'),
-(5, 'MKJ784CKINMBOPE4S', 'Honda', 'City 2019', 'นร-8974', 400, 'AUTO', 'ขาว', 5, 'FM/AM Radio USB/AUX CD/MP3', '20200223_103828.png', 'รถเก๋ง'),
-(6, 'XDEWQE78DC54HJUI4', 'Toyota', 'Yaris 2018', 'กส-5821', 300, 'AUTO', 'แดง', 5, 'FM/AM Radio USB/AUX CD/MP3 Bluetooth', '20200223_104257.png', 'Eco Car'),
-(7, '4CHJKI5EQW8LOIUJ5', 'Suzuki', 'Swift 2018', 'ปท-6325', 300, 'AUTO', 'ขาว', 5, 'FM/AM Radio USB/AUX CD/MP3 ', '20200223_104435.png', 'Eco Car'),
-(8, 'SLCKI74AS5EWV89LM', 'Honda', 'Jazz 2018', 'ทส-9682', 300, 'AUTO', 'ขาว', 5, 'FM/AM Radio USB/AUX CD/MP3', '20200223_104553.png', 'รถเก๋ง'),
-(9, 'DPOI74TY52CLK8962', 'Honda', 'CR-V 2015 ', 'พย-9746', 300, 'AUTO', 'ขาว', 5, 'FM/AM Radio USB/AUX CD/MP3 Bluetooth 4WD', '20200223_104815.png', 'SUV'),
-(10, 'ASE58CNBVF52YUJH4', 'Isuzu', 'MU X 2019 ', 'จต-7415', 400, 'AUTO', 'ขาว', 7, 'FM/AM Radio USB/AUX CD/MP3 Bluetooth 4WD GPS ', '20200223_105039.png', 'SUV'),
-(11, 'PLOWE58RK4IU56VBN', 'Toyota', 'Fortuner 2', 'คข-9659', 400, 'AUTO', 'ขาว', 7, 'FM/AM Radio USB/AU CD/MP3 Bluetooth 4WD GPS ', '20200223_105241.png', 'SUV'),
-(12, 'DSSSCVQW58EPKJ74M', 'MG', 'ZS 2019 ', 'ขก-5588', 400, 'AUTO', 'น้ำเงิน', 5, 'FM/AM Radio USB/AUX CD/MP3 Bluetooth', '20200223_105459.png', 'SUV'),
-(13, 'POMJ45BNV2ZS58EOU', 'Nissan', 'Teana 2019', 'ยน-5236', 300, 'AUTO', 'แดง', 5, 'FM/AM Radio USB/AUX CD/MP3 Bluetooth GPS', '20200223_105702.png', 'รถเก๋ง'),
-(14, 'OPEW58CVZAQAD458Y', 'Toyota', 'Alphard 2019', 'หก-7488', 400, 'AUTO', 'ขาว', 7, 'FM/AM Radio USB/AUX CD/MP3 Bluetooth GPS\r\n', '20200223_110450.png', 'Van'),
-(15, '48CVBJ54KIOM1254G', 'Toyota', 'Vellfire 2', 'รน-1254', 400, 'AUTO', 'ดำ', 7, 'FM/AM Radio        USB/AUX      CD/MP3 Bluetooth GPS ', '20200223_113308.png', 'Van'),
-(16, 'AQ85CX4D5VV47B8BB', 'Mercedes', 'CLA 2016 ', 'วย-3678', 450, 'AUTO', 'ขาว', 4, 'FM/AM Radio USB/AUX CD/MP3 Bluetooth GPS 4WD', '20200223_113812.png', 'Luxury'),
-(17, 'ADX25CDEE4DAJUYHN', 'BMW', 'Series 3 2019', 'ตท-8121', 500, 'AUTO', 'น้ำเงิน', 4, 'FM/AM Radio USB/AUX CD/MP3 ', '20200223_114012.png', 'Luxury'),
-(18, 'JD5CVBNRTG47NMBHJ', 'Mercedes', 'Benz C Class 2019', 'พก-6441', 500, 'AUTO', 'ขาว', 5, 'FM/AM Radio USB/AUX CD/MP3 Bluetooth GPS ', '20200223_114257.png', 'Luxury'),
-(19, 'MKIOPDC4BNH5UIOPL', 'Audi', 'A5 2019 ', 'สห-4478', 600, 'AUTO', 'ขาว', 4, 'FM/AM Radio USB/AUX CD/MP3 Bluetooth 4WD', '20200223_114434.png', 'Luxury'),
-(20, 'WEQ4V5CZXS859EQRT', 'Lamborghin', 'Aventador ', 'กก-4158', 600, 'AUTO', 'ดำ', 2, 'FM/AM Radio USB/AUX CD/MP3', '20200223_114630.png', 'Luxury');
+INSERT INTO `car` (`id`, `Bodynumber`, `Brand`, `Generation`, `License_plate`, `Car_type`, `Price`, `Geartype`, `Color`, `Passenger`, `Detail`, `Picture`) VALUES
+(1, 'MNBAXXMAWAFJ98812', 'Toyota', 'Vios 2015', 'กย-1457', 'รถเก๋ง', 200, 'AUTO', 'น้ำตาล', 5, 'FM/AM Radio USB/AUX CD/MP3', '20200223_104033.jpg'),
+(2, 'MRHCR2640DP106543', 'Nissan', 'Note 2017', 'กข-8514', 'Eco Car', 300, 'AUTO', 'แดง', 4, 'FM/AM Radio USB/AUX Bluetooth', '20200223_103941.jpg'),
+(3, 'MSKI487COINM52369', 'Honda', 'City 2015', 'ขน-5698', 'รถเก๋ง', 300, 'AUTO', 'ขาว', 5, 'FM/AM Radio USB/AUX CD/MP3', '20200223_103418.png'),
+(4, 'KMDSS587CD478EEOI', 'Toyota', 'Vios 2018', 'กก-2541', 'รถเก๋ง', 300, 'AUTO', 'ขาว', 5, 'FM/AM Radio USB/AUX ', '20200223_103556.png'),
+(5, 'MKJ784CKINMBOPE4S', 'Honda', 'City 2019', 'นร-8974', 'รถเก๋ง', 400, 'AUTO', 'ขาว', 5, 'FM/AM Radio USB/AUX CD/MP3', '20200223_103828.png'),
+(6, 'XDEWQE78DC54HJUI4', 'Toyota', 'Yaris 2018', 'กส-5821', 'Eco Car', 300, 'AUTO', 'แดง', 5, 'FM/AM Radio USB/AUX CD/MP3 Bluetooth', '20200223_104257.png'),
+(7, '4CHJKI5EQW8LOIUJ5', 'Suzuki', 'Swift 2018', 'ปท-6325', 'Eco Car', 300, 'AUTO', 'ขาว', 5, 'FM/AM Radio USB/AUX CD/MP3 ', '20200223_104435.png'),
+(8, 'SLCKI74AS5EWV89LM', 'Honda', 'Jazz 2018', 'ทส-9682', 'รถเก๋ง', 300, 'AUTO', 'ขาว', 5, 'FM/AM Radio USB/AUX CD/MP3', '20200223_104553.png'),
+(9, 'DPOI74TY52CLK8962', 'Honda', 'CR-V 2015 ', 'พย-9746', 'SUV', 300, 'AUTO', 'ขาว', 5, 'FM/AM Radio USB/AUX CD/MP3 Bluetooth 4WD', '20200223_104815.png'),
+(10, 'ASE58CNBVF52YUJH4', 'Isuzu', 'MU X 2019 ', 'จต-7415', 'SUV', 400, 'AUTO', 'ขาว', 7, 'FM/AM Radio USB/AUX CD/MP3 Bluetooth 4WD GPS ', '20200223_105039.png'),
+(11, 'PLOWE58RK4IU56VBN', 'Toyota', 'Fortuner 2019', 'คข-9659', 'SUV', 400, 'AUTO', 'ขาว', 7, 'FM/AM Radio USB/AU CD/MP3 Bluetooth 4WD GPS ', '20200223_105241.png'),
+(12, 'DSSSCVQW58EPKJ74M', 'MG', 'ZS 2019 ', 'ขก-5588', 'SUV', 400, 'AUTO', 'น้ำเงิน', 5, 'FM/AM Radio USB/AUX CD/MP3 Bluetooth', '20200223_105459.png'),
+(13, 'POMJ45BNV2ZS58EOU', 'Nissan', 'Teana 2019', 'ยน-5236', 'รถเก๋ง', 300, 'AUTO', 'แดง', 5, 'FM/AM Radio USB/AUX CD/MP3 Bluetooth GPS', '20200223_105702.png'),
+(14, 'OPEW58CVZAQAD458Y', 'Toyota', 'Alphard 2019', 'หก-7488', 'Van', 400, 'AUTO', 'ขาว', 7, 'FM/AM Radio USB/AUX CD/MP3 Bluetooth GPS\r\n', '20200223_110450.png'),
+(15, '48CVBJ54KIOM1254G', 'Toyota', 'Vellfire 2', 'รน-1254', 'Van', 400, 'AUTO', 'ดำ', 7, 'FM/AM Radio        USB/AUX      CD/MP3 Bluetooth GPS ', '20200223_113308.png'),
+(16, 'AQ85CX4D5VV47B8BB', 'Mercedes', 'CLA 2016 ', 'วย-3678', 'Luxury', 450, 'AUTO', 'ขาว', 4, 'FM/AM Radio USB/AUX CD/MP3 Bluetooth GPS 4WD', '20200223_113812.png'),
+(17, 'ADX25CDEE4DAJUYHN', 'BMW', 'Series 3 2019', 'ตท-8121', 'Luxury', 500, 'AUTO', 'น้ำเงิน', 4, 'FM/AM Radio USB/AUX CD/MP3 ', '20200223_114012.png'),
+(18, 'JD5CVBNRTG47NMBHJ', 'Mercedes', 'Benz C Class 2019', 'พก-6441', 'Luxury', 500, 'AUTO', 'ขาว', 5, 'FM/AM Radio USB/AUX CD/MP3 Bluetooth GPS ', '20200223_114257.png'),
+(19, 'MKIOPDC4BNH5UIOPL', 'Audi', 'A5 2019 ', 'สห-4478', 'Luxury', 600, 'AUTO', 'ขาว', 4, 'FM/AM Radio USB/AUX CD/MP3 Bluetooth 4WD', '20200223_114434.png'),
+(20, 'WEQ4V5CZXS859EQRT', 'Lamborghini', 'Aventador ', 'กก-4158', 'Luxury', 60000, 'AUTO', 'ดำ', 2, 'FM/AM Radio USB/AUX CD/MP3', '20200223_114630.png'),
+(21, 'SD74CVBH58NM4JK57', 'Honda	', 'City 2015', 'คก-8778', 'รถเก๋ง', 300, 'กระปุก', 'ดำ', 5, 'FM/AM Radio USB/AUX CD/MP3	', '20200225_112815.jpg'),
+(22, 'WEQ58CLKJU7OPL587', 'Honda	', 'City 2015', 'ยย-6692', 'รถเก๋ง', 300, 'AUTO', 'เทา', 5, 'FM/AM Radio USB/AUX CD/MP3	', '20200225_113204.jpg'),
+(23, '85CXHJ44OPE87RG41', 'Toyota	', 'Vios 2018', 'มต-1225', 'รถเก๋ง', 300, 'กระปุก', 'แดง', 5, 'FM/AM Radio USB/AUX	', '20200225_113600.jpg'),
+(24, 'GFC14VB4HJNM74KIO', 'Toyota	', 'Yaris 2018', 'กฟ-1445', 'Eco Car', 300, 'กระปุก', 'เขียว', 5, 'FM/AM Radio USB/AUX CD/MP3 Bluetooth', '20200225_115224.jpg'),
+(25, 'DCX4ZDSAEQTYH8BNJ', 'Toyota', 'Yaris 2018', 'ทอ-6585', 'Eco Car', 300, 'AUTO', 'ดำ', 5, 'FM/AM Radio USB/AUX CD/MP3 Bluetooth', '20200225_115434.jpg'),
+(26, 'LKMMCJUYHV47BNMJO', 'Toyota	', 'Vios 2018', 'บล-6964', 'รถเก๋ง', 300, 'AUTO', 'ดำ', 5, 'FM/AM Radio USB/AUX', '20200225_115742.jpg'),
+(27, 'POKID4CV5B2HGFERT', 'Toyota	', 'Vios 2015', 'ยน-9968', 'รถเก๋ง', 200, 'กระปุก', 'ขาว', 5, 'FM/AM Radio USB/AUX CD/MP3', '20200225_120150.jpg'),
+(28, 'ADERTYDET4CVBN7JH', 'Toyota', 'Vios 2015', 'พห-2234', 'รถเก๋ง', 200, 'AUTO', 'ดำ', 5, 'FM/AM Radio USB/AUX CD/MP3	', '20200225_140530.jpg'),
+(29, 'MYTKJD45CVZX7ERTG', 'Toyota	', 'Vios 2015', 'มส-7741', 'รถเก๋ง', 200, 'กระปุก', 'เทา', 5, 'FM/AM Radio USB/AUX CD/MP3	', '20200225_124057.jpg'),
+(30, 'GHJLDKMNBE54WEQRT', 'Toyota	', 'Fortuner 2019', 'สก-2656', 'SUV', 400, 'AUTO', 'ดำ', 7, 'USB/AU CD/MP3 Bluetooth 4WD GPS', '20200225_125938.jpg'),
+(31, 'NJKIH47UI5JKIO87I', 'Suzuki	', 'Swift 2018', 'รน-2514', 'Eco Car', 300, 'กระปุก', 'เทา', 5, 'FM/AM Radio USB/AUX CD/MP3	', '20200225_130406.jpg'),
+(32, 'ERQE54DFVC74XZSDE', 'Suzuki	', 'Swift 2018', 'มส-2365', 'Eco Car', 300, 'AUTO', 'ดำ', 5, 'FM/AM Radio USB/AUX CD/MP3	', '20200225_135121.jpg'),
+(33, 'LKJFG52CXXCVV4DEW', 'Suzuki	', 'Swift 2018', 'งว-9912', 'Eco Car', 300, 'กระปุก', 'เหลือง', 5, 'FM/AM Radio USB/AUX CD/MP3', '20200225_135313.jpg'),
+(34, 'POIMJH47GTGHJKMNB', 'Lamborghini	', 'Aventador', 'กก-1111', 'Luxury', 60000, 'AUTO', 'ส้ม', 2, 'FM/AM Radio USB/AUX CD/MP3	', '20200225_140847.jpg'),
+(35, 'QWJKKJ47MNLOP4JHY', 'MG	', 'ZS 2019', 'กย-1212', 'SUV', 400, 'กระปุก', 'ขาว', 5, 'FM/AM Radio USB/AUX CD/MP3 Bluetooth', '20200225_141313.jpg'),
+(36, 'LOIUYREEWDK5MN1BH', 'Nissan	', 'Note 2017', 'อพ-4189', 'Eco Car', 300, 'กระปุก', 'ดำ', 4, 'FM/AM Radio USB/AUX Bluetooth', '20200225_141454.jpg'),
+(37, 'OIIUYHBGT41VFGTYU', 'Nissan	', 'Teana 2019', 'ศว-8574', 'รถเก๋ง', 300, 'กระปุก', 'ขาว', 5, 'FM/AM Radio USB/AUX CD/MP3 Bluetooth GPS	', '20200225_141911.jpg'),
+(38, 'MNBD44EWQDS52CXGG', 'Isuzu	', 'MU X 2019', 'ยฉ-9221', 'SUV', 400, 'กระปุก', 'ดำ', 7, 'FM/AM Radio USB/AUX CD/MP3 Bluetooth 4WD GPS', '20200225_142146.jpg'),
+(39, 'IIUYFGBNMKLOP4IUS', 'Honda	', 'Jazz 2018', 'ธร-7754', 'รถเก๋ง', 300, 'กระปุก', 'ดำ', 5, 'FM/AM Radio USB/AUX CD/MP3	', '20200225_142505.jpg'),
+(40, 'PWEQSDCCDS5JHBXVB', 'Honda	', 'CR-V 2015', 'ฆด-8852', 'SUV', 300, 'กระปุก', 'ดำ', 5, 'FM/AM Radio USB/AUX CD/MP3 Bluetooth 4WD', '20200225_142741.jpg');
 
 -- --------------------------------------------------------
 
@@ -223,40 +243,10 @@ ALTER TABLE `car`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `contract`
---
-ALTER TABLE `contract`
-  ADD PRIMARY KEY (`ID_con`);
-
---
 -- Indexes for table `customer`
 --
 ALTER TABLE `customer`
   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `department`
---
-ALTER TABLE `department`
-  ADD PRIMARY KEY (`ID_dep`);
-
---
--- Indexes for table `employee`
---
-ALTER TABLE `employee`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `rental`
---
-ALTER TABLE `rental`
-  ADD PRIMARY KEY (`Number_rent`);
-
---
--- Indexes for table `tax_invoice`
---
-ALTER TABLE `tax_invoice`
-  ADD PRIMARY KEY (`ID_tax`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -266,25 +256,7 @@ ALTER TABLE `tax_invoice`
 -- AUTO_INCREMENT for table `car`
 --
 ALTER TABLE `car`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
-
---
--- AUTO_INCREMENT for table `customer`
---
-ALTER TABLE `customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `employee`
---
-ALTER TABLE `employee`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `rental`
---
-ALTER TABLE `rental`
-  MODIFY `Number_rent` int(3) NOT NULL AUTO_INCREMENT COMMENT 'ลำดับที่เช่า', AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

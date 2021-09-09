@@ -10,7 +10,7 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <title>CARRENTAAA</title>
     <head>
-        <p>&nbsp</p>
+        <h1><img src="img/road-sign.ico.png" width="50"> CARRENT AAA</h1>
         <div class="topright"><b id="date"></b> | <b id="time"></b>
             <script>
                 var d = new Date();
@@ -40,7 +40,7 @@
             <li><a href="logout.php">ออกจากระบบ</a></li>
             <li><?php echo $_SESSION['user']; ?></li>
         </b></ul>
-      <h1>ข้อมูลรถ>แก้ไข</h1>
+      <h2>ข้อมูลรถ>แก้ไข</h2>
       <div class="row">
         <div class="card">
           <?php include 'connect.php';

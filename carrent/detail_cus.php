@@ -10,7 +10,7 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <title>CARRENTAAA</title>
     <head>
-        <p>&nbsp</p>
+        <h1><img src="img/road-sign.ico.png" width="50"> CARRENT AAA</h1>
         <div class="topright"><b id="date"></b> | <b id="time"></b>
             <script>
                 var d = new Date();
@@ -28,7 +28,7 @@
             <li><a href="logout.php">ออกจากระบบ</a></li>
             <li><?php echo $_SESSION['user']; ?></li>
         </b></ul>
-        <h1>ข้อมูลลูกค้า</h1>
+        <h2>ข้อมูลลูกค้า</h2>
         <div class="card">
             <table>
                 <tr>
@@ -44,7 +44,7 @@
                 while($result = mysqli_fetch_array($query,MYSQLI_ASSOC)) { ?>
                 <tr>
                     <td align="center"><?php echo $result["ID_card"];?></td>
-                    <td align="center"><?php echo $result["Firstname_cus"]; echo "&nbsp&nbsp&nbsp"; echo $result["Lastname_cus"];?></td>
+                    <td align="center"><?php echo $result["Name_cus"]; echo "&nbsp&nbsp&nbsp"; ?></td>
                     <td align="center"><?php echo $result["Phonenumber_cus"];?></td>
                     <td align="center"><?php echo $result["Address_cus"];?></td>
                 </tr>

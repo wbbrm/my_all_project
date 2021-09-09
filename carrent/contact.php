@@ -9,8 +9,7 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <head>
-        <p>&nbsp</p>
-
+        <h1><img src="img/road-sign.ico.png" width="50"> CARRENT AAA</h1>
         <div class="topright"><b id="date"></b> | <b id="time"></b>
             <script>
                 var d = new Date();
@@ -21,8 +20,6 @@
                     document.getElementById("time").innerHTML = t.toLocaleTimeString();
                 }
             </script>
-            <br>
-            <a href="admin.php">เข้าสู่ระบบ</a>
         </div>
     </head>
     <body>

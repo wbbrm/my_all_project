@@ -11,7 +11,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>CARRENT AAA</title>
 <head>
-        <p>&nbsp</p>
+        <h1><img src="img/road-sign.ico.png" width="50"> CARRENT AAA</h1>
         <div class="topright"><b id="date"></b> | <b id="time"></b>
             <script>
                 var d = new Date();
@@ -31,7 +31,7 @@
             <a class="active" href="how_to.php">วิธีการเช่า</a>
             <a href="contact.php">ติดต่อเรา</a>
         </b></div>
-      <h1>ยืนยันการเช่ารถ</h1>
+      <h2>ยืนยันการเช่ารถ</h2>
       <div class="row">
         <div class="card">
           <?php include 'connect.php';

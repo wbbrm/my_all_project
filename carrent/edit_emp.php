@@ -28,7 +28,7 @@
             <li><a href="logout.php">ออกจากระบบ</a></li>
             <li><?php echo $_SESSION['user']; ?></li>
         </b></ul>
-      <h1>ข้อมูลพนักงาน>แก้ไข</h1>
+      <h2>ข้อมูลพนักงาน>แก้ไข</h2>
         <div class="card">
           <?php include 'connect.php';
           $get_id = $_REQUEST['id'];
