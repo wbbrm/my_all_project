@@ -45,7 +45,7 @@
     </style>
     <?php include 'navbar.php' ?>
     <div class="container-fluid py-5 my-5">
-        <table class="table table-borderless">
+        <table class="table">
             <thead>
                 <tr>
                     <th>ชื่อเห็ด</th>
@@ -53,6 +53,7 @@
                     <th>ชื่อสามัญ</th>
                     <th>ชื่อวิทยาศาสตร์</th>
                     <th>รูปตัวอย่าง</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -63,11 +64,12 @@
                     while ($result = mysqli_fetch_array($query)) {
                 ?>
                 <tr>
-                    <td><a href="detail.php?id=<?=$result["Mushroom_Id"]?>"><?php echo $result["Mushroom_name"];?></a></td>
+                    <td><?php echo $result["Mushroom_name"];?></a></td>
                     <td><?php echo $result["Mushroom_localname"];?></td>
                     <td><?php echo $result["Mushroom_commonname"];?></td>
                     <td><?php echo $result["Mushroom_science"];?></td>
                     <td><img src="img/mushroom/<?php echo $result["Mushroom_icon"];?>" width="100"></td>
+                    <td><a href="detail.php?id=<?=$result["Mushroom_Id"]?>">ดูข้อมูลเพิ่มเติม</a></td>
                 </tr>
                 <?php
                     }

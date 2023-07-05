@@ -16,13 +16,11 @@
         $name = $_SESSION["user"];
         if ($_SESSION["usertype"]=="1") {
             echo ("<script LANGUAGE='JavaScript'>
-                window.alert('ยินดีต้อนรับ $name');
-                window.location.href='dashboard.php';
+                window.location.href='location.php';
                 </script>");
         }
         if ($_SESSION["usertype"]=="2") {
             echo ("<script LANGUAGE='JavaScript'>
-                window.alert('ยินดีต้อนรับ $name');
                 </script>");
             header("Location:location.php?id=$mushid");
                 

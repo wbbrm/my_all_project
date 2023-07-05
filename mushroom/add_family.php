@@ -25,6 +25,22 @@
     <?php
         if ($_SESSION["user"]) {
     ?>
+	<?php
+		function genkey() {	
+			include 'connect.php';
+        	$sql = "SELECT MushroomFamily_Id FROM mushroomfamily ORDER BY MushroomFamily_Id DESC";
+    		$query = mysqli_query($conn,$sql);
+    		if (mysqli_num_rows($query)<=0) {
+        		return "001" ;
+    		} else {
+        		$result = mysqli_fetch_array($query);
+        		$mushroomfamily = substr($result["MushroomFamily_Id"],-3);
+    			$mushroomfamily = intval($mushroomfamily)+1;
+				$mushroomfamily = str_pad($mushroomfamily,3,'0',STR_PAD_LEFT);
+	    		return $mushroomfamily;
+        	}
+    	}
+	?>
 	<style>
 		table {
             width: 100%;
@@ -45,7 +61,7 @@
             padding: 5px;
         }
 	</style>
-	<?php include 'nav.php'; include 'logout_modal.php'; ?>
+	<?php include 'navbar_dashboard.php'; include 'logout_modal.php'; ?>
 	<div class="w3-main" style="margin-left:200px;margin-top:43px;padding-left: 20px;padding-right: 20px;">
 		<header class="w3-container" style="padding-top:22px;font-size: 25px;color: #583D28;">
     		ตารางวงศ์เห็ด
@@ -53,7 +69,8 @@
 		<div class="row">
 			<div class="col-xl-3">
 				<form action="insert_family.php" method="post" enctype="multipart/form-data">
-					<label for="mushroom_id">ชื่อวงศ์ :</label>
+					<label for="txtname">ชื่อวงศ์ :</label>
+					<input name="mushroom_family" type="hidden" value="<?=genkey()?>">
 					<input name="txtname" type="text"><br>
 					<div align="center" class="mt-1">
 						<button type="submit">เพิ่ม</button>
@@ -68,10 +85,10 @@
 						<th>&nbsp</th>
 					</tr>
 					<?php
-							include 'connect.php';
-						$sql = "SELECT * FROM mushroomfamily ORDER BY MushroomFamily_Id";
-						$query = mysqli_query($conn,$sql);
-						while($result=mysqli_fetch_array($query,MYSQLI_ASSOC)) {
+						include 'connect.php';
+						$sql = "SELECT * FROM mushroomfamily ORDER BY MushroomFamily_Id"; 
+                		$query = mysqli_query($conn, $sql);
+                		while ($result = mysqli_fetch_array($query)) {
 	           		?>
 					<tr>
 						<td><?php echo $result["MushroomFamily_Id"];?></td>
@@ -90,7 +107,7 @@
     	        						<?=$result["MushroomFamily_Id"]?>
     	        					</div>
     	        					<div class="modal-footer">
-    	        						<form action="del.php?id=<?=$result['MushroomFamily_Id']?>" method="post">
+    	        						<form action="del_family.php?id=<?=$result['MushroomFamily_Id']?>" method="post">
     	        							<button class="confirmbtn" type="submit" style="font-size: 20px">ยืนยัน</button>
     	        						</form>
     	        						<button class="canclebtn" data-dismiss="modal" style="font-size: 20px">ยกเลิก</button>

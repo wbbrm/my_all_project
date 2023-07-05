@@ -1,7 +1,7 @@
 <?php
 	$severname = "localhost";
-	$username = "rspgpnru_mushroom";
-	$password = "mush999";
+	$username = "root";
+	$password = "";
 	$dbname = "rspgpnru_mushroom";
 
 	//creat connection

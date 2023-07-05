@@ -34,8 +34,8 @@
     </style>
 	<?php include ('navbar.php'); ?>
     <div class="container-fluid py-5 my-5" style="background-color: #FAF5EB;">
-    	<div class="row">
-    		<div class="col">
+    	<div class="row mt-3">
+    		<div class="col-md-6">
     			<?php
 					$id = $_GET['id'];
 					include("connect.php");
@@ -83,8 +83,20 @@
 					}
 				?>
 			</div>
-			<div class="col">
+			<div class="col-md-6">
 				<div id="map"></div>
+			</div>
+		</div>
+		<div class="row mt-3">
+			<div class="col-md-6 mx-3">
+				<?php
+					$id = $_GET['id'];
+					include("connect.php");
+					$sql = "SELECT * FROM mushroom ORDER BY Mushroom_Id";
+					$query = mysqli_query($conn,$sql);
+					$result = mysqli_fetch_array($query,MYSQLI_ASSOC);
+				?>
+				<a href="detail.php?id=<?=$result["Mushroom_Id"]?>">กลับ</a>
 			</div>
 		</div>
 	</div>

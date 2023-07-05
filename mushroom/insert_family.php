@@ -1,7 +1,8 @@
 <?php
     include 'connect.php';
-    $name= $_POST['txtname'];
-    $sql = "INSERT INTO mushroomfamily (MushroomFamily_name) VALUES ('$name')";
+    $familyid = $_POST['mushroom_family'];
+    $name = $_POST['txtname'];
+    $sql = "INSERT INTO mushroomfamily (MushroomFamily_Id,MushroomFamily_name) VALUES ('$familyid','$name')";
     if (mysqli_query($conn, $sql)) {
         echo ("<script LANGUAGE='JavaScript'>
             window.alert('บันทึกข้อมูลสำเร็จ');

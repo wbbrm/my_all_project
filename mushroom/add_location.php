@@ -43,7 +43,7 @@
         	}
     	}
 	?>
-	<?php include 'nav.php'; include 'logout_modal.php'; ?>
+	<?php include 'navbar_dashboard.php'; include 'logout_modal.php'; ?>
 	<div class="w3-main" style="margin-left:200px;margin-top:43px;padding-left: 20px;padding-right: 20px;">
 		<header class="w3-container" style="padding-top:22px;font-size: 25px;color: #583D28;">
     		เพิ่มบริเวณที่พบ

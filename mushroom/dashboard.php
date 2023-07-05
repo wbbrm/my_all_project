@@ -56,9 +56,9 @@
 
         #map {
             height: 400px;
-            width: 100%;
+            width: 100%;}
 	</style>
-	<?php include 'nav.php'; include 'logout_modal.php'; ?>
+	<?php include 'navbar_dashboard.php'; include 'logout_modal.php'; ?>
 	<div class="w3-main" style="margin-left:200px;margin-top:43px;padding-left: 20px;padding-right: 20px;">
 		<header class="w3-container" style="padding-top:22px">
     		<h5><b></b></h5>
@@ -70,7 +70,7 @@
 					<div class="w3-right">
 						<?php 
                             include('connect.php');
-                            $sql1 = "SELECT COUNT(MushroomLocationId) AS all_mushroom FROM area" or die("Error:" . mysqli_error());
+                            $sql1 = "SELECT COUNT(Mushroom_Id) AS all_mushroom FROM mushroom" or die("Error:" . mysqli_error());
                             $query1 = mysqli_query($conn, $sql1);
                             while ($result1 = mysqli_fetch_assoc($query1)) {
                                 echo $result1['all_mushroom'];
@@ -86,7 +86,7 @@
 					<div class="w3-right">
 						<?php 
                             include('connect.php');
-                            $sql2 = "SELECT COUNT(MushroomLocationId) AS edible FROM area WHERE status = 'กินได้'" or die("Error:" . mysqli_error());
+                            $sql2 = "SELECT COUNT(Mushroom_Id) AS edible FROM mushroom WHERE Mushroom_Type = 'กินได้'" or die("Error:" . mysqli_error());
                             $query2 = mysqli_query($conn, $sql2);
                             while ($result2 = mysqli_fetch_assoc($query2)) {
                                 echo $result2['edible'];
@@ -102,7 +102,7 @@
 					<div class="w3-right">
 						<?php 
                             include('connect.php');
-                            $sql3 = "SELECT COUNT(MushroomLocationId) AS inedible FROM area WHERE status = 'กินไม่ได้'" or die("Error:" . mysqli_error());
+                            $sql3 = "SELECT COUNT(Mushroom_Id) AS inedible FROM mushroom WHERE Mushroom_type = 'กินไม่ได้'" or die("Error:" . mysqli_error());
                             $query3 = mysqli_query($conn, $sql3);
                             while ($result3 = mysqli_fetch_assoc($query3)) {
                                 echo $result3['inedible'];
@@ -118,7 +118,7 @@
 					<div class="w3-right">
 						<?php 
                             include('connect.php');
-                            $sql4 = "SELECT COUNT(MushroomLocationId) AS poisonous FROM area WHERE status = 'มีพิษ'" or die("Error:" . mysqli_error());
+                            $sql4 = "SELECT COUNT(Mushroom_Id) AS poisonous FROM mushroom WHERE Mushroom_type = 'มีพิษ'" or die("Error:" . mysqli_error());
                             $query4 = mysqli_query($conn, $sql4);
                             while ($result4 = mysqli_fetch_assoc($query4)) {
                                 echo $result4['poisonous'];
@@ -134,7 +134,7 @@
 					<div class="w3-right">
 						<?php 
                             include('connect.php');
-                            $sql5 = "SELECT COUNT(Mushroom_Id) AS unknow FROM area WHERE status = 'ไม่ทราบชนิด'" or die("Error:" . mysqli_error());
+                            $sql5 = "SELECT COUNT(Mushroom_Id) AS unknow FROM mushroom WHERE Mushroom_type = 'ไม่ทราบชนิด'" or die("Error:" . mysqli_error());
                             $query5 = mysqli_query($conn, $sql5);
                             while ($result5 = mysqli_fetch_assoc($query5)) {
                                 echo $result5['unknow'];
@@ -146,10 +146,10 @@
 			</div>
 		</div>
 		<div class="row mt-5">
-			<div class="col" id="tablemushroom">
-				<table>
+			<div class="col">
+				<table id="tablemushroom">
 					<thead>
-						<input type="text" id="filter" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+						<input type="text" id="filter" onkeyup="searchfunc()" placeholder="Search.." title="Type in a category">
 					</thead>
 					<tr>
 						<th>รหัส</th>
@@ -382,6 +382,27 @@
                 src: "//maps.google.com/maps/api/js?key=AIzaSyBKb9-BF6y7fAD_s3s-or9knbdzInJdubw&language=th&callback=initialize"
             }).appendTo("body");
         });
+    </script>
+    <script>
+        function searchfunc() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("filter");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("tablemushroom");
+            tr = table.getElementsByTagName("tr");
+
+            for (i = 1; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
     </script>
 	<?php
         } else {
